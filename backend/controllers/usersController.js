@@ -69,7 +69,7 @@ const updateUser = asyncHandler(async (req, res) => {
 
   user.username = username;
   user.roles = roles;
-  user.acitve = active;
+  user.active = active;
 
   if (password) {
     user.password = await bcrypt.hash(password, 10);
@@ -88,8 +88,8 @@ const deleteUser = asyncHandler(async (req, res) => {
     return res.status(400).json({ message: 'User ID required' });
   }
 
-  const notes = await Note.findOne({ user: id }).lean().exec();
-  if (notes?.length) {
+  const note = await Note.findOne({ user: id }).lean().exec();
+  if (note) {
     return res.status(400).json({ message: 'User has assigned notes' });
   }
 
