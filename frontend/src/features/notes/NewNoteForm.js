@@ -18,6 +18,7 @@ const NewNoteForm = ({ users }) => {
     if (isSuccess) {
       setTitle('');
       setText('');
+      setUserId('');
       navigate('/dash/notes');
     }
   }, [isSuccess, navigate]);
