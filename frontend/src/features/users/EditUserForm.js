@@ -151,7 +151,7 @@ const EditUserForm = ({ user }) => {
           className='form__checkbox'
           id='user-active'
           name='user-active'
-          value={active}
+          checked={active}
           onChange={onActiveChanged}
         />
         <label htmlFor='roles' className='form__label'>
