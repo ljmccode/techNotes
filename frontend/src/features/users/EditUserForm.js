@@ -4,11 +4,13 @@ import { useUpdateUserMutation, useDeleteUserMutation } from './usersApiSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSave, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { ROLES } from '../../config/roles';
+import useTitle from '../../hooks/useTitle';
 
 const USER_REGEX = /^[A-z]{3,20}$/;
 const PWD_REGEX = /^[A-z0-9!@#$%]{4,12}$/;
 
 const EditUserForm = ({ user }) => {
+  useTitle(`Dan D. Repairs | Edit User ${user.username}`);
   const [updateUser, { isLoading, isSuccess, isError, error }] =
     useUpdateUserMutation();
 

@@ -4,8 +4,11 @@ import { useDispatch } from 'react-redux';
 import { setCredentials } from './authSlice';
 import { useLoginMutation } from './authApiSlice';
 import usePersist from '../../hooks/usePersist';
+import useTitle from '../../hooks/useTitle';
+import PulseLoader from 'react-spinners/PulseLoader';
 
 const Login = () => {
+  useTitle('Dan D. Repairs | Login');
   const userRef = useRef();
   const errRef = useRef();
   const [username, setUsername] = useState('');
@@ -54,7 +57,7 @@ const Login = () => {
 
   const errClass = errMsg ? 'errmsg' : 'offscreen';
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <PulseLoader color={'#FFF'} />;
 
   const content = (
     <section className='public'>
