@@ -1,11 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { selectUserById } from './usersApiSlice';
+import { useGetUsersQuery } from './usersApiSlice';
 
 const User = ({ userId }) => {
-  const user = useSelector((state) => selectUserById(state, userId));
+  const { user } = useGetUsersQuery('usersList', {
+    selectFromResult: ({ data }) => ({
+      user: data?.entites[userId],
+    }),
+  });
   const navigate = useNavigate();
 
   if (user) {
