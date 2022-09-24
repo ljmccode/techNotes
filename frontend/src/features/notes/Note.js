@@ -47,5 +47,6 @@ const Note = ({ noteId }) => {
     );
   } else return null;
 };
+const memoizedNote = memo(Note);
 
-export default Note;
+export default memoizedNote;
