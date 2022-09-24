@@ -4,8 +4,10 @@ import { useUpdateNoteMutation, useDeleteNoteMutation } from './notesApiSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSave, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import useAuth from '../../hooks/useAuth';
+import useTitle from '../../hooks/useTitle';
 
 const EditNoteForm = ({ note, users }) => {
+  useTitle(`Dan D. Repairs | Edit Note #${note.ticket}`);
   const { isManager, isAdmin } = useAuth();
 
   const [updateNote, { isLoading, isSuccess, isError, error }] =
