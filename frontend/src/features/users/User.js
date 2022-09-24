@@ -7,7 +7,7 @@ import { memo } from 'react';
 const User = ({ userId }) => {
   const { user } = useGetUsersQuery('usersList', {
     selectFromResult: ({ data }) => ({
-      user: data?.entites[userId],
+      user: data?.entities[userId],
     }),
   });
 
