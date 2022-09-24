@@ -7,7 +7,6 @@ import {
   faFilePen,
   faUserGear,
   faUserPlus,
-  faFile,
 } from '@fortawesome/free-solid-svg-icons';
 import { useSendLogoutMutation } from '../features/auth/authApiSlice';
 import useAuth from '../hooks/useAuth';
