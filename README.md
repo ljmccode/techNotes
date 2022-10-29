@@ -39,7 +39,7 @@ This project is currently set up for production. In order to make updates in dev
 
   ```json
   {
-    "username": "dandowner",
+    "username": "yourusername",
     "password": "abc123",
     "roles": ["Admin"]
   }
