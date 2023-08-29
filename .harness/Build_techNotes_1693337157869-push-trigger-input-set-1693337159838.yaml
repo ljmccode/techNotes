@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_techNotes_1693337157869-push-trigger-input-set
+  identifier: Build_techNotes_1693337157869pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Practice
+  pipeline:
+    identifier: Build_techNotes_1693337157869
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
