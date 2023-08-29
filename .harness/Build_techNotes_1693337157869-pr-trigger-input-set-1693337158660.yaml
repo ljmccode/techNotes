@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_techNotes_1693337157869-pr-trigger-input-set
+  identifier: Build_techNotes_1693337157869prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Practice
+  pipeline:
+    identifier: Build_techNotes_1693337157869
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
